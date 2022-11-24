@@ -2,12 +2,14 @@ package SIGN;
 
 
 public enum Consumable {
-	BREAD("b"), APPLE("app"), POTION("p"), ALCOHOL("al"), SANDWICH("s");
+	BREAD("b",7), APPLE("app",5), HEAL_POTION("hp",15), MANA_POTION("mp",15), ALCOHOL("al",10), SANDWICH("s",12);
 		
 	private String brand;
+	private int buff;
 	
-	private Consumable(String name) {
+	private Consumable(String name, int b) {
 		brand = name;
+		buff = b;
 	}
 	
 	public static Consumable getConsumable(String name) {
@@ -18,6 +20,14 @@ public enum Consumable {
 			}
 		}
 		return null;
+	}
+	
+	public String getBrand() {
+		return brand;
+	}
+	
+	public int getBuff() {
+		return buff;
 	}
 	
 }
