@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Backpack {
 	
-	public static final int STOCK_DEFAULT = 20;
+	public static final int STOCK_DEFAULT = 200;
 	
 	private int stockage;
 	

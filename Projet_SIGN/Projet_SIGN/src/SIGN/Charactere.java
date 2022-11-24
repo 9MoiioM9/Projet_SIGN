@@ -5,7 +5,7 @@ public abstract class Charactere {
 	//TODO valeur à adapter j'ai mis au hasard ..
 	public static final int ATTACK_DEFAULT = 1;
 	public static final int HP_DEFAULT = 30;
-	public static final int MANA_DEFAULT = 15;
+	public static final int MANA_DEFAULT = 2;
 	public static final int SHIELD_DEFAULT = 10;
 	
 	
