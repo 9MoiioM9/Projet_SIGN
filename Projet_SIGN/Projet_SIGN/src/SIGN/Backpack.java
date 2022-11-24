@@ -51,4 +51,6 @@ public class Backpack {
 	public void printStock() {
 		System.out.println("Vous possédez "+inventory.size()+" dans votre sac !");
 	}
+	
+	
 }
