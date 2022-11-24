@@ -11,7 +11,6 @@ public class Backpack {
 	
 	private List<Item> inventory = new ArrayList<Item>();
 	
-	
 	public Backpack() {
 		stockage = STOCK_DEFAULT;
 		inventory = null;
@@ -51,6 +50,5 @@ public class Backpack {
 	public void printStock() {
 		System.out.println("Vous possédez "+inventory.size()+" dans votre sac !");
 	}
-	
 	
 }
