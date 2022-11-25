@@ -1,6 +1,6 @@
 package SIGN;
 
-public class Hero_Heroine extends Charactere{
+public class Hero_Heroine extends Charactere {
 	
 	public Hero_Heroine() {
 		super("Billy");

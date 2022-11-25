@@ -1,13 +1,14 @@
 package SIGN;
 
-public abstract class Charactere {
+public abstract class Charactere implements Use {
 	
 	//TODO valeur à adapter j'ai mis au hasard ..
 	public static final int ATTACK_DEFAULT = 1;
 	public static final int HP_DEFAULT = 30;
 	public static final int MANA_DEFAULT = 15;
 	public static final int SHIELD_DEFAULT = 10;
-	
+	public static final int MAX_HP = 50;
+	public static final int MAX_MANA = 25;
 	
 	private String name;
 	
@@ -26,11 +27,6 @@ public abstract class Charactere {
 		shield = SHIELD_DEFAULT;
 		mana = MANA_DEFAULT;
 		ptAttack = ATTACK_DEFAULT;
-	}
-	
-	//TODO gestion de l'attaque (surement par interface)
-	public void attack() { // faire par rapport au dmg de l'arme mis en paramètre
-		
 	}
 
 	public String getName() {
@@ -53,10 +49,28 @@ public abstract class Charactere {
 		return ptAttack;
 	}
 	
-	//TODO gestion de l'armure
-	public void setNewShield() { //adapter la stat de shield par rapport à la stat de l'armure mis en paramètre
-		
+	@Override
+	public void useWeapon(Weapon w, Charactere p) {
+		//TODO p.hp -= w.getDmg; //attente des changements de la classe Weapon
 	}
+	
+	@Override
+	public void useConsumable(Consumable c, Charactere p) {
+		if(c.getBrand() == "al" || c.getBrand() == "mp") {
+			if(p.mana + c.getBuff() >= MAX_MANA) {
+				mana = MAX_MANA;
+			}else p.mana += c.getBuff();
+		}else {
+			if(p.hp + c.getBuff() >= MAX_HP) {
+				p.hp = MAX_HP;
+			}else p.hp += c.getBuff();
+		}
+	}
+	
+	//TODO gestion de l'armure
+//	public void setNewShield(Armor a) { //adapter la stat de shield par rapport à la stat de l'armure mis en paramètre
+//		shield += a.getBuff();
+//	}
 	
 	
 }
