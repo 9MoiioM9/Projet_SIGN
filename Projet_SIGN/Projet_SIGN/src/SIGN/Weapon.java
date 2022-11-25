@@ -2,16 +2,22 @@ package SIGN;
 
 public enum Weapon {
 	
-	SWORD("sword"), MAGIC_STAFF("magic_staff"), KNIFE("knife"), STONE("stone");
-	
+	SWORD("sword",10), MAGIC_STAFF("magic_staff",20), KNIFE("knife",5), STONE("stone",3);	
 	
 	private String brand;
-	private Weapon(String s) {
+	private int damage;
+	
+	private Weapon(String s,int d) {
 		brand = s;
+		damage = d;
 	}
 	
 	public String getBrand() {
 		return brand;
+	}
+	
+	public int getdamage() {
+		return damage;
 	}
 	
 	
@@ -25,5 +31,10 @@ public enum Weapon {
 		return null;
 	}
 	
+	
+	public void Upgrade_weapon(int new_d) {
+		damage = new_d;
+		System.out.println("Your weapon can inflict " + new_d + " damage now!");
+	}
 }
 

@@ -2,7 +2,6 @@ package SIGN;
 
 public abstract class Charactere implements Use {
 	
-	//TODO valeur à adapter j'ai mis au hasard ..
 	public static final int ATTACK_DEFAULT = 1;
 	public static final int HP_DEFAULT = 30;
 	public static final int MANA_DEFAULT = 15;
