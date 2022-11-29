@@ -15,7 +15,6 @@ public abstract class Item implements Use{
 	
 	public Item(String n) {
 		name = n;
-		myEquipment = Equipment.getEquipment(n);
 	}
 
 	public Equipment getEquipment() {
