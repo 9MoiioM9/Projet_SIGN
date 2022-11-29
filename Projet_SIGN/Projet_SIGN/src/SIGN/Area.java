@@ -10,6 +10,9 @@ public abstract class Area {
 		
 	}
 	*/
+	
+	
+	
 	public String getType() {
 		return type;
 	}
