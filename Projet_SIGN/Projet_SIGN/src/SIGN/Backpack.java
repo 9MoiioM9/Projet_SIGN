@@ -43,12 +43,12 @@ public class Backpack {
 	}
 	
 	public void removeItem(Item i) {
-		System.out.println("Vous avez perdu "+Item.name);
+		System.out.println("You just lost "+Item.name);
 		inventory.remove(i);
 	}
 	
 	public void printStock() {
-		System.out.println("Vous possédez "+inventory.size()+" dans votre sac !");
+		System.out.println("You have "+inventory.size()+" in your backpack!");
 	}
 	
 }

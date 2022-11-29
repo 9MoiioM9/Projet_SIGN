@@ -1,8 +1,5 @@
 package SIGN;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Chest{
 	
 	private boolean locked;
@@ -13,24 +10,25 @@ public class Chest{
 		
 		locked = DEFAULT_LOCKED;
 		item = null;
-		
 	}
 	
-	public void take_C(Chest c) {
-		if(locked == false) {
-			if(Backpack.isFull() == false) {
-				Backpack.addItem(c.item);
+	public boolean isLocked() {
+		return locked;
+	}
+	
+	public void takeLoot(Chest c, Backpack b) {
+		if(!locked) {
+			if(!b.isFull()) {
+				b.addItem(c.item);
 				System.out.println("You get an item !");
 			}
-		}else System.out.println("the chest is locked, you need a key");
+		}else System.out.println("The chest is locked, a key is needed");
 	}
 	
-	public void unlock_chest(Item i) {
-		if(locked == false) {
-			System.out.println("The chest is open don't need a key ");
-		}else if(i.getName() == "key") {
-			
+	public void unlock_Chest(Item i) {
+		if(i.getName() == "key") {
 			locked = false;
-		}
-	}
+			System.out.println("The Chest is now open");
+		}else System.out.println("You don't have a key to open this Chest...");
+	}	
 }
