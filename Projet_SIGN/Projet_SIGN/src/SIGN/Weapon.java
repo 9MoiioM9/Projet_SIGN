@@ -16,7 +16,7 @@ public enum Weapon {
 		return brand;
 	}
 	
-	public int getdamage() {
+	public int getDamage() {
 		return damage;
 	}
 	

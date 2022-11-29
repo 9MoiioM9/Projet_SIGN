@@ -48,9 +48,13 @@ public abstract class Charactere implements Use {
 		return ptAttack;
 	}
 	
+	
 	@Override
 	public void useWeapon(Weapon w, Charactere p) {
-		//TODO p.hp -= w.getDmg; //attente des changements de la classe Weapon
+		if(p.getHp() >= w.getDamage()) {
+			p.hp -= w.getDamage();
+			System.out.println("You lost "+w.getDamage()+p.getHp()+" less");
+		}else p.hp = 0;
 	}
 	
 	@Override
