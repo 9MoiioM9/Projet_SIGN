@@ -4,7 +4,7 @@ public abstract class Item implements Use{
 	
 	public static String name;
 	
-	private Weapon myWeapon;
+	private Equipment myEquipment;
 	private Consumable myConso;
 	
 	private int volume;
@@ -15,11 +15,11 @@ public abstract class Item implements Use{
 	
 	public Item(String n) {
 		name = n;
-		myWeapon = Weapon.getWeapon(n);
+		myEquipment = Equipment.getEquipment(n);
 	}
 
-	public Weapon getWeapon() {
-		return myWeapon;
+	public Equipment getEquipment() {
+		return myEquipment;
 	}
 	
 	public Consumable getConsumable() {

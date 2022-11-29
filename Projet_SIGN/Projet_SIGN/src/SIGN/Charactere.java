@@ -50,11 +50,13 @@ public abstract class Charactere implements Use {
 	
 	
 	@Override
-	public void useWeapon(Weapon w, Charactere p) {
-		if(p.getHp() >= w.getDamage()) {
-			p.hp -= w.getDamage();
-			System.out.println("You lost "+w.getDamage()+p.getHp()+" less");
-		}else p.hp = 0;
+	public void useEquipment(Equipment e, Charactere p) {
+		if(e.getDamage() != 0) {
+			if(p.getHp() >= e.getDamage()) {
+				p.hp -= e.getDamage();
+				System.out.println("You lost "+e.getDamage()+p.getHp()+" less");
+			}else p.hp = 0;
+		}else p.shield += e.getArmor();
 	}
 	
 	@Override
@@ -70,10 +72,5 @@ public abstract class Charactere implements Use {
 		}
 	}
 	
-	//TODO gestion de l'armure
-//	public void setNewShield(Armor a) { //adapter la stat de shield par rapport à la stat de l'armure mis en paramètre
-//		shield += a.getBuff();
-//	}
-	
-	
+		
 }
