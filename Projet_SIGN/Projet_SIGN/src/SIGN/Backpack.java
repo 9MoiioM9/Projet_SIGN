@@ -35,6 +35,7 @@ public class Backpack {
 	
 	public void addItem(Item i) {
 		inventory.add(i);
+		
 	}
 	
 	public Item randomItem() {

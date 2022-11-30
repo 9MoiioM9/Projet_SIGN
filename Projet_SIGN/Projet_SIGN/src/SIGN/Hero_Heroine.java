@@ -6,6 +6,8 @@ public class Hero_Heroine extends Charactere {
 
 	private String location;
 	
+	private Backpack inventory;
+	
 	public Hero_Heroine() {
 		super("Billy");
 		location = STARTER;
@@ -25,11 +27,37 @@ public class Hero_Heroine extends Charactere {
 		
 	}
 	
+	
 	public void changeLocation(String newLocation) {
 		location = newLocation;
 	}
 	
 	public void moveTO(String newlocation) {
 		
+	}
+	
+	public Equipment getWeapon(Equipment w) {
+		for(Item i : inventory.getInventory()) {
+			if(i == "sword")// || i == "magic_staff" || i == "knife" || i == "stone")
+				return i;
+		}
+	}
+	
+	public Equipment getArmor(Equipment a) {
+		for(Item i : inventory.getInventory()) {
+			return i;
+		}
+		
+	}
+	
+	//mettre à jour les stat atk et shield
+	// recuperer armure et arme
+	// finir fight
+	public void setNewAtk(Equipment w) {
+		setPtAttack(getPtAttack() + w.getDamage()) ;
+	}
+	
+	public void setNewShield(Equipment w) {
+		setShield(getShield() + w.getArmor());
 	}
 }
