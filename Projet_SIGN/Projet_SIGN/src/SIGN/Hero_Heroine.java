@@ -24,4 +24,12 @@ public class Hero_Heroine extends Charactere {
 		System.out.println("shield : "+test.getShield());
 		
 	}
+	
+	public void changeLocation(String newLocation) {
+		location = newLocation;
+	}
+	
+	public void moveTO(String newlocation) {
+		
+	}
 }

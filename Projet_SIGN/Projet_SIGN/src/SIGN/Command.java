@@ -4,6 +4,13 @@ import java.util.Scanner;
 
 public class Command {
 	
+	public void gestionCommand(String command) {
+		switch(command){
+			case "GO" : System.out.println("List Of Command from HELP :");
+			break;
+		}
+	}
+	
 	public static void afficheHELP() {
 		System.out.println("List Of Command from HELP :");
 		System.out.println("GO -> Permit to move on another location;");
@@ -54,7 +61,7 @@ public class Command {
 	}
 	
 	
-	public static void moveTO(Scanner moveto) {
+	public static void choiceDirection(Scanner moveto) {
 		String direction;
 		
 		
@@ -76,18 +83,22 @@ public class Command {
 			
 			default : 
 				locationHELP();
-				moveTO(moveto);
+				choiceDirection(moveto);
 				System.out.println();
 		}
 			
 		//moveto.close();
 	}
 	
-	public static void directionInfo() {
-		System.out.println("North you can find [Location]"); 
-		System.out.println("South you can find [Location]");
-		System.out.println("West you can find [Location]");
-		System.out.println("Est you can find [Location]");
+	public static void directionInfo(String north, String south, String west, String est) {
+		System.out.println("North you can find "+north); 
+		System.out.println("South you can find "+south);
+		System.out.println("West you can find "+west);
+		System.out.println("Est you can find "+est);
+	}
+	
+	public void gestionLOOK(String look) {
+		
 	}
 	
 	public static void main(String argv[]) {
@@ -97,7 +108,7 @@ public class Command {
 		
 		Command.askCommand(t);
 		
-		Command.moveTO(t);
+		Command.choiceDirection(t);
 		
 		t.close();
 		
