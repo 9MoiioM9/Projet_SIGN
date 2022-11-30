@@ -18,6 +18,7 @@ public class Command {
 		System.out.println("TAKE -> Take an item;");
 		System.out.println("USE -> Use an Item;");
 		System.out.println("QUIT -> Quit the game;");
+		System.out.println("ATTACK -> YOU ATTACK AN ENNEMY;");
 	}
 	
 	
@@ -43,6 +44,9 @@ public class Command {
 			break;
 			
 			case "QUIT" : System.out.println("Have a Good Day");
+			break;
+			
+			case "ATTACK" : System.out.println("You attack your ennemy");
 			break;
 			
 			default : 

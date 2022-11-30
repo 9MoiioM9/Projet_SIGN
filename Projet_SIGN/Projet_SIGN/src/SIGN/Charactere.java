@@ -40,6 +40,14 @@ public abstract class Charactere implements Use {
 		return shield;
 	}
 
+	public void setShield(int shield) {
+		this.shield = shield;
+	}
+
+	public void setPtAttack(int ptAttack) {
+		this.ptAttack = ptAttack;
+	}
+
 	public int getMana() {
 		return mana;
 	}
