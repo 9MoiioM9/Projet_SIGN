@@ -1,6 +1,6 @@
 package SIGN;
 
-public abstract class Item implements Use{
+public class Item {
 	
 	public static String name;
 	
@@ -13,7 +13,7 @@ public abstract class Item implements Use{
 	
 	private boolean usable;
 	
-	public Item(String n) {
+	public Item(String n ) {
 		name = n;
 	}
 
