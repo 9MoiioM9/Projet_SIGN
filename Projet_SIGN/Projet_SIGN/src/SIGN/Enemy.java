@@ -12,4 +12,6 @@ public class Enemy extends Charactere {
 		return stuff;
 	}
 	
+	
+	
 }
