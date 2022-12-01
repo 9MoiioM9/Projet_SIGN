@@ -91,13 +91,6 @@ public class Command {
 		}
 	}
 	
-	public static void directionInfo(String north, String south, String west, String est) {
-		System.out.println("North you can find "+north); 
-		System.out.println("South you can find "+south);
-		System.out.println("West you can find "+west);
-		System.out.println("Est you can find "+est);
-	}// dans villageMap faire methode qui renvoie un String pour chaque location north south ...
-	
 	public void gestionLOOK(String look) {
 		
 	}
@@ -110,9 +103,9 @@ public class Command {
 				Command.afficheHELP();
 			}else {
 				 e.setHp(e.getHp()- h.getPtAttack());
-				 System.out.println("You do 5 damage");
-				 h.setHp(h.getHp() - e.getPtAttack());
-				 System.out.println("You suffer 5 damage");
+				 System.out.println("You did "+h.getPtAttack()+" damage");
+				 h.setHp(h.getHp() - (e.getPtAttack() - h.getArmorPoint()));
+				 System.out.println("You suffered "+(e.getPtAttack()-h.getArmorPoint())+" damage");
 			}
 		}
 	}

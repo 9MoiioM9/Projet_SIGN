@@ -2,7 +2,7 @@ package SIGN;
 
 
 public enum Consumable {
-	BREAD("b",7), APPLE("app",5), HEAL_POTION("hp",15), MANA_POTION("mp",15), ALCOHOL("al",10), SANDWICH("s",12), KEY("k", 0);
+	BREAD("b",7), APPLE("app",5), HEAL_POTION("hp",15), ALCOHOL("al",6), SANDWICH("s",12), KEY("k", 0);
 		
 	private String brand;
 	private int buff;
