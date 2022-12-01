@@ -10,12 +10,14 @@ public class Room extends Area{
 	private boolean util;
 	private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 	private int nbEnemy;
+	private String name;
 	
 	
-	public Room(int nb, int nbEn) {
+	public Room(int nb, int nbEn, String n) {
 		number = nb;
 		util = true;
 		nbEnemy = nbEn;
+		name = n;
 	}
 	
 	public int getNumber() {
@@ -34,7 +36,9 @@ public class Room extends Area{
 		enemies.add(en);
 	}
 	
-	
+	public int getName() {
+		return number;
+	}
 	
 	public ArrayList<Enemy> getEnemies() {
 		return enemies;
@@ -73,6 +77,10 @@ public class Room extends Area{
 			break;
 		}
 		
+	}
+	
+	public boolean finalFight(Hero_Heroine h) {
+		return h.getLocation() == "r6";
 	}
 	
 	

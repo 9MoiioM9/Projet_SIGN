@@ -21,18 +21,22 @@ public class Castle {
 	
 	
 	public List<Room> initCastle() {
-		Room r;
-		for(int i = 1; i <= 6; i++) {
-			if(i == 1) {
-				r = new Room(i, 2);
-			}
-			else if(i == 3){
-				r = new Room(i, 0);
-			}
-			else r = new Room(i, 1);
-			
-			addRoom(r);
-		}
+		
+		Room r1 = new Room(1, 2, "r1");
+		Room r2 = new Room(2, 2, "r2");
+		Room r3 = new Room(3, 2, "r3");
+		Room r4 = new Room(4, 2, "r4");
+		Room r5 = new Room(5, 2, "r5");
+		Room r6 = new Room(1, 2, "r6");
+		
+		rooms.add(r1);
+		rooms.add(r2);
+		rooms.add(r3);
+		rooms.add(r4);
+		rooms.add(r5);
+		rooms.add(r6);
+		
+		
 		return rooms;
 	}
 	
