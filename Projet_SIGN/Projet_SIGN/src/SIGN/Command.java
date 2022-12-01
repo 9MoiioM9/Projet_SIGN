@@ -18,7 +18,7 @@ public class Command {
 		System.out.println("TAKE -> Take an item;");
 		System.out.println("USE -> Use an Item;");
 		System.out.println("QUIT -> Quit the game;");
-		System.out.println("ATTACK -> YOU ATTACK AN ENNEMY;");
+		System.out.println("ATTACK -> Attack an enemy;");
 	}
 	
 	
@@ -46,7 +46,7 @@ public class Command {
 			case "QUIT" : System.out.println("Have a Good Day");
 			break;
 			
-			case "ATTACK" : System.out.println("You attack your ennemy");
+			case "ATTACK" : System.out.println("You've dealt damage to your ennemy");
 			break;
 			
 			default : 
@@ -54,7 +54,6 @@ public class Command {
 				System.out.println();
 				askCommand(ask);
 		}
-		//ask.close();
 	}
 	
 	public static void locationHELP() {
@@ -63,7 +62,6 @@ public class Command {
 		System.out.println("S : Go to The SOUTH");
 		System.out.println("W : Go to The WEST");
 	}
-	
 	
 	public static void choiceDirection(Scanner moveto) {
 		String direction;
@@ -90,8 +88,6 @@ public class Command {
 				choiceDirection(moveto);
 				System.out.println();
 		}
-			
-		//moveto.close();
 	}
 	
 	public static void directionInfo(String north, String south, String west, String est) {
@@ -99,7 +95,7 @@ public class Command {
 		System.out.println("South you can find "+south);
 		System.out.println("West you can find "+west);
 		System.out.println("Est you can find "+est);
-	}
+	}// dans villageMap faire methode qui renvoie un String pour chaque location north south ...
 	
 	public void gestionLOOK(String look) {
 		

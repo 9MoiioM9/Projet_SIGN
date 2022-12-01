@@ -8,8 +8,8 @@ public class Hero_Heroine extends Charactere {
 	
 	private Backpack inventory;
 	
-	public Hero_Heroine() {
-		super("Billy");
+	public Hero_Heroine(String name) {
+		super(name);
 		location = STARTER;
 	}
 	
@@ -30,11 +30,9 @@ public class Hero_Heroine extends Charactere {
 	
 	public void changeLocation(String newLocation) {
 		location = newLocation;
+		System.out.println("You walk to "+newLocation);
 	}
 	
-	public void moveTO(String newlocation) {
-		
-	}
 	
 	public Equipment getWeapon(Equipment w) {
 		for(Item i : inventory.getInventory()) {
