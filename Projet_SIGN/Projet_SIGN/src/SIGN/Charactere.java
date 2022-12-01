@@ -1,5 +1,7 @@
 package SIGN;
 
+
+
 public abstract class Charactere implements Use {
 	
 	public static final int ATTACK_DEFAULT = 1;
@@ -56,6 +58,9 @@ public abstract class Charactere implements Use {
 		return ptAttack;
 	}
 	
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
 	
 	@Override
 	public void useEquipment(Equipment e, Charactere p) {
@@ -79,6 +84,5 @@ public abstract class Charactere implements Use {
 			}else p.hp += c.getBuff();
 		}
 	}
-	
 		
 }

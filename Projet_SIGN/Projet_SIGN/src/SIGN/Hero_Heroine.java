@@ -36,28 +36,34 @@ public class Hero_Heroine extends Charactere {
 		
 	}
 	
-	public Equipment getWeapon(Equipment w) {
+	public int getWeaponAtk() {
+		int atk = 0;
 		for(Item i : inventory.getInventory()) {
-			if(i == "sword")// || i == "magic_staff" || i == "knife" || i == "stone")
-				return i;
+			if(i.getName() == "sword" || i.getName() == "magic_staff" || i.getName() == "knife" || i.getName() == "stone") {
+				atk = i.getEquipment().getDamage();
+			}
 		}
+		return atk;
 	}
 	
-	public Equipment getArmor(Equipment a) {
+	public int getArmorPoint() {
+		int armorP = 0;
 		for(Item i : inventory.getInventory()) {
-			return i;
+			if(i.getName() == "iron_armor" || i.getName() == "guard_armor") {
+				armorP = i.getEquipment().getArmor();
+			}
 		}
+		return armorP;
 		
 	}
 	
-	//mettre à jour les stat atk et shield
-	// recuperer armure et arme
+	
 	// finir fight
-	public void setNewAtk(Equipment w) {
-		setPtAttack(getPtAttack() + w.getDamage()) ;
+	public void setNewAtk() {
+		setPtAttack(getPtAttack() + getWeaponAtk()) ;
 	}
 	
-	public void setNewShield(Equipment w) {
-		setShield(getShield() + w.getArmor());
+	public void setNewShield() {
+		setShield(getShield() + getArmorPoint());
 	}
 }
