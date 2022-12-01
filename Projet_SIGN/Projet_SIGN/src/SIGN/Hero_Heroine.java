@@ -17,24 +17,11 @@ public class Hero_Heroine extends Charactere {
 		return location;
 	}
 	
-	public static void main(String argv[]) {
-		Hero_Heroine test = new Hero_Heroine("Billy");
-		
-		System.out.println(test.getName()+"\nhp : "+test.getHp());
-		System.out.println("mana : "+test.getMana());
-		System.out.println("attack : "+test.getPtAttack());
-		System.out.println("shield : "+test.getShield());
-		
-	}
-	
-	
 	public void changeLocation(String newLocation) {
 		location = newLocation;
+		System.out.println("You walk to "+newLocation);
 	}
 	
-	public void moveTO(String newlocation) {
-		
-	}
 	
 	public int getWeaponAtk() {
 		int atk = 0;
