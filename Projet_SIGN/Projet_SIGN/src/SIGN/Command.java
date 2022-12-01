@@ -17,12 +17,12 @@ public class Command {
 		System.out.println("LOOK -> Display a description of the current location;");
 		System.out.println("TAKE -> Take an item;");
 		System.out.println("USE -> Use an Item;");
-		System.out.println("QUIT -> Quit the game;");
 		System.out.println("ATTACK -> Attack an enemy;");
+		System.out.println("QUIT -> Quit the game;");
 	}
 	
 	
-	public static void askCommand(Scanner ask) {
+	public static String askCommand(Scanner ask) {
 		
 		String command;
 		
@@ -31,7 +31,7 @@ public class Command {
 		
 		
 		switch(command) {
-			case "TAKE" : System.out.println("Yes");
+			case "TAKE" : System.out.println("You got an Item");
 			break;
 			
 			case "GO" : System.out.println("GO -> Permit to move on another location;");
@@ -54,6 +54,7 @@ public class Command {
 				System.out.println();
 				askCommand(ask);
 		}
+		return command;
 	}
 	
 	public static void locationHELP() {
@@ -101,21 +102,18 @@ public class Command {
 		
 	}
 	
-	
-	
 	public void fight(Hero_Heroine h, Enemy e, Scanner scan) {
 		while(h.getHp() > 0 || e.getHp() > 0) {
 			Command.askCommand(scan);
 			if(scan.nextLine() != "ATTACK") {
-				System.out.println("You are in a fight, you can't do anything else ");
+				System.out.println("You are in a fight, you can't do anythings else ");
 				Command.afficheHELP();
 			}else {
 				 e.setHp(e.getHp()- h.getPtAttack());
-				 System.out.println("You did 5 damage");
+				 System.out.println("You do 5 damage");
 				 h.setHp(h.getHp() - e.getPtAttack());
-				 System.out.println("You suffered 5 damage");
+				 System.out.println("You suffer 5 damage");
 			}
 		}
 	}
-	
 }
