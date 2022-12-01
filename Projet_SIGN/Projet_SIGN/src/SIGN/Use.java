@@ -2,7 +2,7 @@ package SIGN;
 
 public interface Use {
 	
-	public void useConsumable(Consumable c, Charactere p);
-	public void useEquipment(Equipment e, Charactere p);
+	public void useConsumable(Consumable c, Hero_Heroine h);
+	public void useEquipment(Equipment e, Hero_Heroine h);
 
 }
