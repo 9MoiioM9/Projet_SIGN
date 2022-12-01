@@ -7,14 +7,11 @@ public enum Equipment {
 	private String brand;
 	private int damage;
 	private int armor;
-	private boolean equiped;
-	private static final boolean EQUIPED_DEFAULT = false;
 	
 	private Equipment(String s,int d, int a) {
 		brand = s;
 		damage = d;
 		armor = a;
-		equiped = EQUIPED_DEFAULT;
 	}
 	
 	public String getBrand() {
@@ -29,13 +26,6 @@ public enum Equipment {
 		return armor;
 	}
 	
-	public boolean isEquiped() {
-		return equiped;
-	}
-
-	public void setEquiped(boolean equiped) {
-		this.equiped = equiped;
-	}
 
 	public static Equipment getEquipment(String name) {
 		Equipment[]  tab = Equipment.values();

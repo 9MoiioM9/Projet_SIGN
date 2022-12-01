@@ -8,8 +8,8 @@ public class Hero_Heroine extends Charactere {
 	
 	private Backpack inventory;
 	
-	public Hero_Heroine() {
-		super("Billy");
+	public Hero_Heroine(String name) {
+		super(name);
 		location = STARTER;
 	}
 	
@@ -18,7 +18,7 @@ public class Hero_Heroine extends Charactere {
 	}
 	
 	public static void main(String argv[]) {
-		Hero_Heroine test = new Hero_Heroine();
+		Hero_Heroine test = new Hero_Heroine("Billy");
 		
 		System.out.println(test.getName()+"\nhp : "+test.getHp());
 		System.out.println("mana : "+test.getMana());
@@ -58,7 +58,6 @@ public class Hero_Heroine extends Charactere {
 	}
 	
 	
-	// finir fight
 	public void setNewAtk() {
 		setPtAttack(getPtAttack() + getWeaponAtk()) ;
 	}
