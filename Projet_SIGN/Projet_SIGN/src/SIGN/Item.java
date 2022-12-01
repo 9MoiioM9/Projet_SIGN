@@ -7,10 +7,6 @@ public class Item {
 	private Equipment myEquipment;
 	private Consumable myConso;
 	
-	private int volume;
-	
-	private int numberInStock;
-	
 	private boolean usable;
 	
 	public Item(String n ) {
@@ -29,17 +25,7 @@ public class Item {
 		return name;
 	}
 	
-	public int getNumberStock() {
-		return numberInStock;
-	}
-	
 	public boolean isUsable() {
 		return usable;
 	}
-	
-	public int getVolume() {
-		return volume;
-	}
-	
-	
 }

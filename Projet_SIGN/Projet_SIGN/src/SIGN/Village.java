@@ -2,7 +2,7 @@ package SIGN;
 
 public class Village extends Area {
 		
-	private String name; //genre v1 v2 ...
+	private String name; 
 	
 	public static final String TYPE = "village";
 	
@@ -32,8 +32,8 @@ public class Village extends Area {
 								+"\n\nYou lay on the ground and you wake up slowly."
 									+"\nAn old man is standing next to you, he is holding a backpack and a sword"+"\nIs it for You?");
 		        System.out.println("\nThe old man : "
-									+"\nBilly? Are you awake? How are you ?");
-		        System.out.println("\nBilly : "
+									+"\nAre you awake? How are you ?");
+		        System.out.println("\nYou : "
 									+"\nFine thank you. What the hell happened?");
 		        System.out.println("\nWilliam : "
 		        					+"\nFirst my name is William."
@@ -46,7 +46,7 @@ public class Village extends Area {
 		        break ;
 			case "v2" : 
 				System.out.println("Welcome to the second village!"+"\nYou can see a man in front of a chest who seem to be locked.");
-		        System.out.println("\nBilly : "
+		        System.out.println("\nYou : "
 		        					+"\nGood morning sir! What can I find in that chest?");
 		        System.out.println("\nThe man : "
 		        					+"\nI don't know maybe nothing, this chest doesn't belong to me."
@@ -55,7 +55,7 @@ public class Village extends Area {
 		        System.out.println("Find the key in the village to unlock the chest");
 		        System.out.println("****************************************");
 		        System.out.println("****************************************");
-		        System.out.println("In the chest there are 1 mana potion, 1 acohol, 1 heal potion");
+		        System.out.println("In the chest there are 1 acohol, 1 heal potion");
 		        break;
 			case "v3" :
 				System.out.println("Welcome to the village number 3!"
@@ -89,7 +89,7 @@ public class Village extends Area {
 								+"\nThey seem to keep something"+ "\n ..."
 								+"\nfootsteps sound closer behind you."+"\n..."
 								+"\nWho are you!? What are you doing here!?");
-		    	System.out.println("\nBilly : "+"\nOh no ...");
+		    	System.out.println("\nYou : "+"\nOh no ...");
 		    	System.out.println("\nIt's the armed guard who spotted you and attacked you, \n Defend yourself !");
 		    	break ; 
 			case "v4" : System.out.println("You can see a key on the ground");
@@ -133,12 +133,12 @@ public class Village extends Area {
 	    	break ; 
 		case "v4" : 
 			System.out.println("You can see an old lady tring to open a chest");
-			System.out.println("\nBilly : "
+			System.out.println("\nYou : "
 							+"\nCan I help you ?");
 			System.out.println("\nThe old lady : "
 							+"\nOh yes, I lost the key of my chest can you help me find it young adventurer?"
 							+"\nIn exchange I will give you its contents");
-			System.out.println("\nBilly : "
+			System.out.println("\nYou : "
 							+"\nOf course, I come back soon.");
 			System.out.println("\nYou have to found the key of the chest to unlock it !");
 	    	break;
