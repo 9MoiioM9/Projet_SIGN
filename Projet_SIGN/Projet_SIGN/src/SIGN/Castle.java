@@ -7,14 +7,22 @@ public class Castle {
 	
 	private ArrayList<Room> rooms = new ArrayList<Room>();
 	
+	public Castle() {
+		rooms = null;
+	}
+	
 	public void addRoom(Room r) {
 		rooms.add(r);
+	}
+	
+	public ArrayList<Room> getRooms() {
+		return rooms;
 	}
 	
 	
 	public List<Room> initCastle() {
 		Room r;
-		for(int i = 0; i < 6; i++) {
+		for(int i = 1; i <= 6; i++) {
 			if(i == 1) {
 				r = new Room(i, 2);
 			}
@@ -28,8 +36,6 @@ public class Castle {
 		return rooms;
 	}
 	
-	public void play() {
-		// toute ce qui va se passer dans le chateaux
-	}
+	
 
 }
