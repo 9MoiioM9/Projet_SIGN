@@ -7,14 +7,12 @@ public class Room extends Area{
 	
 	private int number;
 	public static final String TYPE = "room";
-	private boolean util;
 	private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 	private int nbEnemy;
 	
 	
 	public Room(int nb, int nbEn) {
 		number = nb;
-		util = true;
 		nbEnemy = nbEn;
 	}
 	
@@ -22,19 +20,9 @@ public class Room extends Area{
 		return number;
 	}
 	
-	public boolean isUtil() {
-		return util;
-	}
-	
-	public void changeUtil() {
-		util = false;
-	}
-	
 	public void addEnemy(Enemy en) {
 		enemies.add(en);
 	}
-	
-	
 	
 	public ArrayList<Enemy> getEnemies() {
 		return enemies;
