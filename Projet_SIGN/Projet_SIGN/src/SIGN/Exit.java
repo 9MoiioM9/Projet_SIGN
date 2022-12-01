@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Exit {
-	
-	private List<Village> gateway_V = new ArrayList<Village>();
+  private List<Village> gateway_V = new ArrayList<Village>();
 	private List<Room> door = new ArrayList<Room>();
 
 	
@@ -20,7 +19,4 @@ public class Exit {
 	public List<Room> getDoor(){
 		return door;
 	}
-	
-	
-	
 }
