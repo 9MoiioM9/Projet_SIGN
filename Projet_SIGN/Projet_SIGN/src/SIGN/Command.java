@@ -101,17 +101,21 @@ public class Command {
 		
 	}
 	
-	public static void main(String argv[]) {
-		System.out.println("TEST");
-		
-		Scanner t = new Scanner(System.in);
-		
-		Command.askCommand(t);
-		
-		Command.choiceDirection(t);
-		
-		t.close();
-		
+	
+	
+	public void fight(Hero_Heroine h, Enemy e, Scanner scan) {
+		while(h.getHp() > 0 || e.getHp() > 0) {
+			Command.askCommand(scan);
+			if(scan.nextLine() != "ATTACK") {
+				System.out.println("You are in a fight, you can't do anything else ");
+				Command.afficheHELP();
+			}else {
+				 e.setHp(e.getHp()- h.getPtAttack());
+				 System.out.println("You did 5 damage");
+				 h.setHp(h.getHp() - e.getPtAttack());
+				 System.out.println("You suffered 5 damage");
+			}
+		}
 	}
 	
 }
