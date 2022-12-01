@@ -6,23 +6,12 @@ public class Village extends Area {
 	
 	public static final String TYPE = "village";
 	
-	private boolean util;
-	
 	public Village(String n) {
 		name = n;
-		util = true;
 	}
 	
 	public String getName() {
 		return name;
-	}
-	
-	public boolean isUtil() {
-		return util;
-	}
-	
-	public void changeUtil() {
-		util = false;
 	}
 	
 	public void desc_Enter(String name) {

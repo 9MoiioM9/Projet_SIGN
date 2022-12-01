@@ -7,7 +7,6 @@ public class Room extends Area{
 	
 	private int number;
 	public static final String TYPE = "room";
-	private boolean util;
 	private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 	private int nbEnemy;
 	private String name;
@@ -15,7 +14,6 @@ public class Room extends Area{
 	
 	public Room(int nb, int nbEn, String n) {
 		number = nb;
-		util = true;
 		nbEnemy = nbEn;
 		name = n;
 	}
@@ -24,22 +22,17 @@ public class Room extends Area{
 		return number;
 	}
 	
-	public boolean isUtil() {
-		return util;
-	}
-	
-	public void changeUtil() {
-		util = false;
-	}
-	
 	public void addEnemy(Enemy en) {
 		enemies.add(en);
 	}
 	
+<<<<<<< HEAD
 	public int getName() {
 		return number;
 	}
 	
+=======
+>>>>>>> 941bdf23d5663ce20905ac97e330f1dbeeafa1c0
 	public ArrayList<Enemy> getEnemies() {
 		return enemies;
 	}
