@@ -113,7 +113,7 @@ public class Village extends Area {
 		case "v4" : 
 			System.out.println("You can see the entrance to the castle"
 							+"\nIn front of it there are 2 heal potions, 1 sandwich and 1 acohol, maybe an old campfire of guards..");
-	    	System.out.println("You see a sign not so far, you read it"
+	    	System.out.println("You see a sign not so far, you read it :"
 							+"\n --Dare to enter and you will suffer to death !-- ");
 	    	System.out.println("Be sure to be ready before enter !");
 	    	break;
@@ -143,16 +143,5 @@ public class Village extends Area {
 			System.out.println("\nYou have to found the key of the chest to unlock it !");
 	    	break;
 		}
-	}
-	
-	public static void main(String argv[]) {
-		
-		Village test = new Village("v1");
-		
-		test.desc_Enter(test.getName());
-		test.desc_Est(test.getName());
-		test.desc_North(test.getName());
-		test.desc_West(test.getName());
-		
 	}
 }
