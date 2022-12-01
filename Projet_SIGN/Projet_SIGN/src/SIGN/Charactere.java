@@ -63,6 +63,7 @@ public abstract class Charactere implements Use {
 	}
 	
 	@Override
+<<<<<<< Updated upstream
 	public void useEquipment(Equipment e, Charactere p) {
 		if(e.getDamage() != 0) {
 			if(p.getHp() >= e.getDamage()) {
@@ -70,6 +71,14 @@ public abstract class Charactere implements Use {
 				System.out.println("You lost "+e.getDamage()+p.getHp()+" less");
 			}else p.hp = 0;
 		}else p.shield += e.getArmor();
+=======
+	public void useWeapon(Weapon w, Charactere p) {
+		//
+		if(p.hp > w.getdamage()) {
+			p.hp -= w.getdamage();
+		}
+		else p.hp = 0;
+>>>>>>> Stashed changes
 	}
 	
 	@Override
