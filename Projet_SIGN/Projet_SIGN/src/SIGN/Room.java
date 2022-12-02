@@ -26,22 +26,20 @@ public class Room extends Area{
 		enemies.add(en);
 	}
 	
-<<<<<<< HEAD
-	public int getName() {
-		return number;
+	public String getName() {
+		return name;
 	}
 	
-=======
->>>>>>> 941bdf23d5663ce20905ac97e330f1dbeeafa1c0
 	public ArrayList<Enemy> getEnemies() {
 		return enemies;
 	}
 
 
-	public void background(int number) {
+	public int background(int number) {
+		int ret = 2;
 		switch(number) {
 			case 1 : System.out.println("You enter in the castle, in this room you can see one door on the left wall and another one in front of you."
-									+"The wall on the right is damaged."
+									+"There is a door on the right ."
 									+ "\nTwo guards come to you, they take out their weapons");
 			break;
 			
@@ -55,6 +53,7 @@ public class Room extends Area{
 			
 			case 4 : System.out.println("You are in the desk-room of the leader's guards,"
 									+"there is a door on your left and the desk in front of you");
+			ret = 3;
 			break;
 			
 			case 5 : System.out.println("You enter in a jail, there is someone in a cage on your right and a guard in front of you"
@@ -69,6 +68,7 @@ public class Room extends Area{
 									+ "\nYou must defeat Rufus and save the kingdom!");
 			break;
 		}
+		return ret;
 		
 	}
 	
@@ -79,8 +79,12 @@ public class Room extends Area{
 	
 	public List<Enemy> initRoom() {
 		for(int i = 0; i < nbEnemy; i++) {
-			Enemy n = new Enemy("Guard");
-			addEnemy(n);	
+			if(i == 4) {
+				enemies = null;
+			}else {
+				Enemy n = new Enemy("Guard");
+				addEnemy(n);
+			}
 		}
 		return enemies;
 	}

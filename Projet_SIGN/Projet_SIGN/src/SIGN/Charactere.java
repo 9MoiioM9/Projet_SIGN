@@ -48,30 +48,13 @@ public abstract class Charactere implements Use {
 	}
 	
 	@Override
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-	public void useEquipment(Equipment e, Charactere p) {
-=======
 	public void useEquipment(Equipment e, Hero_Heroine p) {
->>>>>>> 941bdf23d5663ce20905ac97e330f1dbeeafa1c0
 		if(e.getDamage() != 0) {
 			if(p.getHp() >= e.getDamage()) {
 				p.hp -= e.getDamage();
 				System.out.println("You lost "+e.getDamage()+p.getHp()+" less");
 			}else p.hp = 0;
-<<<<<<< HEAD
-		}else p.shield += e.getArmor();
-=======
-	public void useWeapon(Weapon w, Charactere p) {
-		//
-		if(p.hp > w.getdamage()) {
-			p.hp -= w.getdamage();
-		}
-		else p.hp = 0;
->>>>>>> Stashed changes
-=======
 		}else p.setShield(p.getShield() + e.getArmor());
->>>>>>> 941bdf23d5663ce20905ac97e330f1dbeeafa1c0
 	}
 	
 	@Override
@@ -79,6 +62,7 @@ public abstract class Charactere implements Use {
 			if(p.hp + c.getBuff() >= p.getConst()) {
 				p.hp = p.getConst();
 			}else p.hp += c.getBuff();
+			p.getBackpack().removeItem(new Item(c.getBrand()));
 	}
 		
 }

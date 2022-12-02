@@ -1,5 +1,8 @@
 package SIGN;
 
+
+import java.util.List;
+
 public class Hero_Heroine extends Charactere {
 	
 	public static final String STARTER = "v1";
@@ -9,6 +12,8 @@ public class Hero_Heroine extends Charactere {
 	protected int hp;
 	
 	private String location;
+	
+	private String localLocation = "S";
 	
 	private Backpack inventory;
 	
@@ -27,6 +32,20 @@ public class Hero_Heroine extends Charactere {
 	
 	public int getConst() {
 		return MAX_HP;
+	}
+	
+	public void setLocal(String s) {
+		localLocation = s;
+	}
+	
+	public void take(List<Item> i) {
+		for(Item x : i) {
+			inventory.addItem(x);
+		}
+	}
+	
+	public Backpack getBackpack() {
+		return inventory;
 	}
 	
 	public void changeLocation(String newLocation) {
