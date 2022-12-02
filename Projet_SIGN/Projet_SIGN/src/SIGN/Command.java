@@ -12,7 +12,7 @@ public class Command {
 	}
 	
 	public static void afficheHELP() {
-		System.out.println("List Of Command from HELP :");
+		System.out.println("List Of Command from HELP :\n");
 		System.out.println("GO -> Permit to move on another location;");
 		System.out.println("LOOK -> Display a description of the current location;");
 		System.out.println("TAKE -> Take an item;");
@@ -35,7 +35,7 @@ public class Command {
 			break;
 			
 			case "GO" : System.out.println("GO -> Permit to move on another location;");
-			choiceDirection(ask);
+						//choiceDirection(ask);
 			break;
 			
 			case "LOOK" : System.out.println("Check around");
@@ -92,12 +92,6 @@ public class Command {
 		}
 		return direction;
 	}
-	
-	public void gestionLOOK(String look) {
-		
-	}
-	
-	
 	
 	public void fight(Hero_Heroine h, Enemy e, Scanner scan) {
 		Item i = new Item("app");

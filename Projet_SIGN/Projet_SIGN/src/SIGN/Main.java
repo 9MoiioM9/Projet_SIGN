@@ -1,11 +1,16 @@
 package SIGN;
 
+import java.util.Scanner;
+
 public class Main {
 	
-	Backpack test = new Backpack();
-<<<<<<< Updated upstream
-	//Item i = new ;
-=======
->>>>>>> Stashed changes
+	public static void main(String[] args) {
 		
+		Game party = new Game(); 
+		Scanner yes = new Scanner(System.in);
+		Scanner no = new Scanner(System.in);
+		party.initGame(yes);
+		
+		party.play(no);
+	}
 }
