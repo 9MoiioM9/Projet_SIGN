@@ -30,11 +30,20 @@ public class Hero_Heroine extends Charactere {
 		return hp;
 	}
 	
+	public boolean stillAlive() {
+		return this.hp > 0;
+	}
+	
 	public int getConst() {
 		return MAX_HP;
 	}
 	
+	public String getlocalLocation() {
+		return localLocation;
+	}
+	
 	public void setLocal(String s) {
+		System.out.println("You walk to "+s);
 		localLocation = s;
 	}
 	

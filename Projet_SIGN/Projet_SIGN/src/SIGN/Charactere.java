@@ -48,16 +48,6 @@ public abstract class Charactere implements Use {
 	}
 	
 	@Override
-	public void useEquipment(Equipment e, Hero_Heroine p) {
-		if(e.getDamage() != 0) {
-			if(p.getHp() >= e.getDamage()) {
-				p.hp -= e.getDamage();
-				System.out.println("You lost "+e.getDamage()+p.getHp()+" less");
-			}else p.hp = 0;
-		}else p.setShield(p.getShield() + e.getArmor());
-	}
-	
-	@Override
 	public void useConsumable(Consumable c, Hero_Heroine p) {
 			if(p.hp + c.getBuff() >= p.getConst()) {
 				p.hp = p.getConst();

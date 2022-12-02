@@ -13,7 +13,6 @@ public class Backpack {
 	
 	public Backpack() {
 		stockage = STOCK_DEFAULT;
-		inventory = null;
 	}
 	
 	

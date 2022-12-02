@@ -8,10 +8,12 @@ public class Game {
 	
 	private Castle c;
 	private Village v1;
-	private Village v2;
-	private Village v3;
-	private Village v4;
+	private Command com;
 	private Hero_Heroine h;
+	
+	public Game() {
+		
+	}
 	
 	public void initGame(Scanner commande) {
 		c = new Castle();
@@ -22,7 +24,6 @@ public class Game {
 		i.add(new Item("b"));
 		
 		v1 = new Village("v1", 1, i  );
-		
 		
 		
 		String nameHero;
@@ -43,23 +44,22 @@ public class Game {
 	}
 	
 	public void useComd(String s, Hero_Heroine h, Scanner scan){
-		
+		String d;
 		switch(s) {
 			case "TAKE" : h.take(v1.getItems());
 				System.out.println("You got items");
 			break;
 			
-			case "USE" : h.useConsumable(, h);
+			case "USE" : h.useConsumable(Consumable.getConsumable(scan.nextLine()), h);
 				System.out.println("you use ");
 			break;
 			
 			case "LOOK" : v1.desc_Enter(v1.getName());
 			break;
 			
-			case "GO" : h.setLocal(Command.choiceDirection(scan));
-			break;
-			
-			case "QUIT" : System.out.println("You quit THE game");
+			case "GO" : d = Command.choiceDirection(scan);
+						h.setLocal(d);
+						v1.descDirection(v1.getName(),d);
 			break;
 		}
 	}
@@ -70,17 +70,24 @@ public class Game {
 		background();
 		String gestion;
 		while(true) {
+			if(h.getlocalLocation() == "S") {
+				v1.desc_Enter(v1.getName());
+			}
 			
-			v1.desc_Enter(v1.getName());
 			System.out.println("What Would you do ?");
 			
 			gestion = Command.askCommand(commande);
 			useComd(gestion, h, commande);
 			
+			if(gestion == "QUIT") {
+				break;
+			}
 			
+			if(!h.stillAlive()) {break ;}
 			
-			
-			
+			if(h.getlocalLocation() == "N") {
+				com.fight(h, v1.getEnemy(), commande);
+			}
 			
 			if(finalFight(h)) {
 				System.out.println("The king take out a great-sword and looking at you : "
@@ -93,6 +100,7 @@ public class Game {
 				break;
 			}
 		}
+		System.out.println("\n\n---------------------------------------------------------------------");
 	}
 
 	

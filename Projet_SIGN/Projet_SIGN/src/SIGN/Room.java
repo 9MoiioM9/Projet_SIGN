@@ -30,7 +30,7 @@ public class Room extends Area{
 		return name;
 	}
 	
-	public ArrayList<Enemy> getEnemies() {
+	public List<Enemy> getEnemies() {
 		return enemies;
 	}
 
@@ -77,7 +77,7 @@ public class Room extends Area{
 	}
 	
 	
-	public List<Enemy> initRoom() {
+	public void initRoom() {
 		for(int i = 0; i < nbEnemy; i++) {
 			if(i == 4) {
 				enemies = null;
@@ -86,7 +86,6 @@ public class Room extends Area{
 				addEnemy(n);
 			}
 		}
-		return enemies;
 	}
 	
 	
