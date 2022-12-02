@@ -31,16 +31,17 @@ public class Command {
 		
 		
 		switch(command) {
-			case "TAKE" : System.out.println("You got an Item");
+			case "TAKE" : System.out.println("You got Items");
 			break;
 			
 			case "GO" : System.out.println("GO -> Permit to move on another location;");
+			choiceDirection(ask);
 			break;
 			
 			case "LOOK" : System.out.println("Check around");
 			break;
 			
-			case "USE" : System.out.println("Yes");
+			case "USE" : System.out.println("you use an item");
 			break;
 			
 			case "QUIT" : System.out.println("Have a Good Day");
@@ -64,7 +65,7 @@ public class Command {
 		System.out.println("W : Go to The WEST");
 	}
 	
-	public static void choiceDirection(Scanner moveto) {
+	public static String choiceDirection(Scanner moveto) {
 		String direction;
 		
 		
@@ -89,13 +90,17 @@ public class Command {
 				choiceDirection(moveto);
 				System.out.println();
 		}
+		return direction;
 	}
 	
 	public void gestionLOOK(String look) {
 		
 	}
 	
+	
+	
 	public void fight(Hero_Heroine h, Enemy e, Scanner scan) {
+		Item i = new Item("app");
 		while(h.getHp() > 0 || e.getHp() > 0) {
 			Command.askCommand(scan);
 			if(scan.nextLine() != "ATTACK") {
@@ -107,6 +112,9 @@ public class Command {
 				 h.setHp(h.getHp() - (e.getPtAttack() - h.getArmorPoint()));
 				 System.out.println("You suffered "+(e.getPtAttack()-h.getArmorPoint())+" damage");
 			}
+			
 		}
+		h.getBackpack().addItem(i);
+		h.getBackpack().addItem(i);
 	}
 }

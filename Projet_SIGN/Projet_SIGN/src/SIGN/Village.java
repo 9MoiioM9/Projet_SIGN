@@ -1,17 +1,34 @@
 package SIGN;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Village extends Area {
 		
 	private String name; 
 	
 	public static final String TYPE = "village";
 	
-	public Village(String n) {
+	private int number;
+	
+	private List<Item> items = new ArrayList<Item>();
+	
+	public Village(String n, int nb, List<Item> l) {
 		name = n;
+		number = nb;
+		items = l;
 	}
 	
 	public String getName() {
 		return name;
+	}
+	
+	public int getNumber() {
+		return number;
+	}
+	
+	public List<Item> getItems() {
+		return items;
 	}
 	
 	public void desc_Enter(String name) {
@@ -40,11 +57,6 @@ public class Village extends Area {
 		        System.out.println("\nThe man : "
 		        					+"\nI don't know maybe nothing, this chest doesn't belong to me."
 		        					+"\nIf you want to unlock it you have to found the key young boy.");
-		        System.out.println("****************************************");
-		        System.out.println("Find the key in the village to unlock the chest");
-		        System.out.println("****************************************");
-		        System.out.println("****************************************");
-		        System.out.println("In the chest there are 1 acohol, 1 heal potion");
 		        break;
 			case "v3" :
 				System.out.println("Welcome to the village number 3!"
@@ -61,15 +73,18 @@ public class Village extends Area {
 		}
 	}
 	
-	public void desc_North(String name) {
+	public int desc_North(String name) {
+		int ret = 0;
 			switch(name) {
 			case "v1" : 
 				System.out.println("You see an enemy, a slime !, he has behind him 1 heal potion and 1 bread."
 								+"\nBeat him to be able to take these items.");
+				ret = 2;
 				break ;
 			case "v2" : 
 				System.out.println("You can see an enemy a soldier stand in front of you, behind him you can see 1 key, 1 apple"
 								+"\nBeat the ennemy to take items");
+				ret = 2;
 				break;
 			case "v3" : 
 				System.out.println("You hear footsteps"
@@ -80,24 +95,31 @@ public class Village extends Area {
 								+"\nWho are you!? What are you doing here!?");
 		    	System.out.println("\nYou : "+"\nOh no ...");
 		    	System.out.println("\nIt's the armed guard who spotted you and attacked you, \n Defend yourself !");
+		    	ret = 2;
 		    	break ; 
 			case "v4" : System.out.println("You can see a key on the ground");
+			ret = 1;
 			break;
 			}
+			return ret;
 	}
 	
-	public void desc_West(String name) {
+	public int desc_West(String name) {
+		int ret = 0;
 		switch(name) {
 		case "v1" : 
 			System.out.println("You can see a little house but you can't go inside."
 							+"\nHowever,in the garden you can see 2 apples."
 							+"\nMaybe it can be useful..., you can take them or leave them there");
+			ret = 1;
 			break ;
 		case "v2" : 
 			System.out.println("You can see a bird and 1 bread laid on a rock");
+			ret = 1;
 			break;
 		case "v3" : 
 			System.out.println("You can see in a little house, on a table 1 bread and 1 sandwich.");
+			ret = 1;
 	    	break ; 
 		case "v4" : 
 			System.out.println("You can see the entrance to the castle"
@@ -105,20 +127,25 @@ public class Village extends Area {
 	    	System.out.println("You see a sign not so far, you read it :"
 							+"\n --Dare to enter and you will suffer to death !-- ");
 	    	System.out.println("Be sure to be ready before enter !");
+	    	ret = 1;
 	    	break;
 		}
+		return ret;
 	}
 	
-	public void desc_Est(String name) {
+	public int desc_Est(String name) {
+		int ret = 0;
 		switch(name) {
 		case "v1" : 
 			System.out.println("There is nothing, go along your path");
 			break ;
 		case "v2" : 
 			System.out.println("You can see a stick and 1 health potion at the entrance of a forest");
+			ret = 1;
 			break;
 		case "v3" : 
 			System.out.println("You can see 4 sticks and some animals like cows,donkeys...");
+			ret = 1;
 	    	break ; 
 		case "v4" : 
 			System.out.println("You can see an old lady tring to open a chest");
@@ -130,7 +157,9 @@ public class Village extends Area {
 			System.out.println("\nYou : "
 							+"\nOf course, I come back soon.");
 			System.out.println("\nYou have to found the key of the chest to unlock it !");
+			ret = 1;
 	    	break;
 		}
+		return ret;
 	}
 }
