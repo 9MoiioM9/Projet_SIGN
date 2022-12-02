@@ -4,12 +4,7 @@ import java.util.Scanner;
 
 public class Command {
 	
-	public void gestionCommand(String command) {
-		switch(command){
-			case "GO" : System.out.println("List Of Command from HELP :");
-			break;
-		}
-	}
+	
 	
 	public static void afficheHELP() {
 		System.out.println("List Of Command from HELP :\n");
@@ -35,7 +30,6 @@ public class Command {
 			break;
 			
 			case "GO" : System.out.println("GO -> Permit to move on another location;");
-						//choiceDirection(ask);
 			break;
 			
 			case "LOOK" : System.out.println("Check around");

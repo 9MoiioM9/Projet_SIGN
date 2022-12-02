@@ -15,7 +15,6 @@ public class Backpack {
 		stockage = STOCK_DEFAULT;
 	}
 	
-	
 	public int getStockage() {
 		return stockage;
 	}
@@ -35,11 +34,6 @@ public class Backpack {
 	public void addItem(Item i) {
 		inventory.add(i);
 		
-	}
-	
-	public Item randomItem() {
-		int nb  = (int) (Math.random() * 20);
-		return inventory.get(nb);
 	}
 	
 	public void removeItem(Item i) {

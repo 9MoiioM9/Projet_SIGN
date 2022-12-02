@@ -7,8 +7,6 @@ public class Item {
 	private Equipment myEquipment;
 	private Consumable myConso;
 	
-	private boolean usable;
-	
 	public Item(String n ) {
 		name = n;
 	}
@@ -23,9 +21,5 @@ public class Item {
 	
 	public String getName() {
 		return name;
-	}
-	
-	public boolean isUsable() {
-		return usable;
 	}
 }
