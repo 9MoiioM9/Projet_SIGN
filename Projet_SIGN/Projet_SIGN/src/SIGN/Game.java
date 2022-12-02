@@ -88,6 +88,9 @@ public class Game {
 			if(h.getlocalLocation() == "N") {
 				com.fight(h, v1.getEnemy(), commande);
 			}
+			//gestion room
+			
+			
 			
 			if(finalFight(h)) {
 				System.out.println("The king take out a great-sword and looking at you : "

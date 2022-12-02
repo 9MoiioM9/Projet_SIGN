@@ -47,6 +47,13 @@ public abstract class Charactere implements Use {
 		this.hp = hp;
 	}
 	
+	//TEST
+	public void test_life(){
+		if(this.getHp() <= 0){
+		     System.out.println("you're dead !");
+		}
+	}
+	
 	@Override
 	public void useConsumable(Consumable c, Hero_Heroine p) {
 			if(p.hp + c.getBuff() >= p.getConst()) {
